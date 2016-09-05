@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping default-access="field">
+    <class name="chess.domain.model.report.Report" table="t_report">
+        <id name="id" type="java.lang.String" column="id" unsaved-value="null" length="32">
+            <generator class="uuid"/>
+        </id>
+
+        <version name="version" type="java.lang.Integer" column="version"/>
+
+        <property name="createDate" column="create_date" type="java.util.Date"/>
+
+        <many-to-one name="reportUser" column="report_user_id" class="chess.domain.model.user.User"/>
+
+        <many-to-one name="quiltReportUser" column="quilt_report_user_id"
+                     class="chess.domain.model.user.User"/>
+
+        <property name="title" column="title" type="java.lang.String"/>
+        <property name="content" column="content" type="java.lang.String"/>
+        <bag name="pictures" cascade="all">
+            <key column="report_id"/>
+            <one-to-many class="chess.domain.model.picture.Picture"/>
+        </bag>
+
+        <property name="handleStatus" column="handle_status">
+            <type name="org.hibernate.type.EnumType">
+                <param name="enumClass">chess.core.enums.HandleStatus</param>
+                <param name="type">4</param>
+            </type>
+        </property>
+
+        <property name="handleResult" column="handle_result" type="java.lang.String"/>
+
+        <property name="handleDate" column="handle_date" type="java.util.Date"/>
+
+    </class>
+
+</hibernate-mapping>

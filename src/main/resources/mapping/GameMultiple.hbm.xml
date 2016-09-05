@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping default-access="field">
+    <class name="chess.domain.model.gamemultiple.GameMultiple" table="t_game_multiple">
+        <id name="id" type="java.lang.String" column="id" unsaved-value="null" length="32">
+            <generator class="uuid"/>
+        </id>
+
+        <version name="version" type="java.lang.Integer" column="version"/>
+
+        <property name="createDate" column="create_date" type="java.util.Date"/>
+
+        <property name="gameType" column="game_type">
+            <type name="org.hibernate.type.EnumType">
+                <param name="enumClass">chess.core.enums.GameType</param>
+                <param name="type">4</param>
+            </type>
+        </property>
+
+        <property name="multiple" column="multiple" type="java.math.BigDecimal" scale="2"/>
+
+        <property name="minMoney" column="min_money" type="java.math.BigDecimal"/>
+    </class>
+
+</hibernate-mapping>

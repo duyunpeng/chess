@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping default-access="field">
+    <class name="chess.domain.model.appversion.AppVersion" table="t_app_version">
+        <id name="id" type="java.lang.String" column="id" unsaved-value="null" length="32">
+            <generator class="uuid"/>
+        </id>
+
+        <version name="version" type="java.lang.Integer" column="version"/>
+
+        <property name="createDate" column="create_date" type="java.util.Date"/>
+
+        <property name="appVersion" column="app_version" type="java.lang.String"/>
+        <property name="updateDate" column="update_date" type="java.util.Date"/>
+        <property name="updateContent" column="update_content" type="java.lang.String"/>
+        <property name="status" column="status">
+            <type name="org.hibernate.type.EnumType">
+                <param name="enumClass">chess.core.enums.EnableStatus</param>
+                <param name="type">4</param>
+            </type>
+        </property>
+    </class>
+
+</hibernate-mapping>

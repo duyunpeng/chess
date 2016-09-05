@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping default-access="field" default-cascade="all">
+    <class name="chess.domain.model.withdraw.Withdraw" table="t_withdraw">
+        <id name="id" type="java.lang.String" column="id" unsaved-value="-1" length="32">
+            <generator class="uuid"/>
+        </id>
+
+        <version name="version" type="java.lang.Integer" column="version"/>
+
+        <many-to-one name="user" column="user_id" class="chess.domain.model.user.User"/>
+
+        <property name="createDate" column="create_date" type="java.util.Date"/>
+
+        <property name="money" column="money" type="java.math.BigDecimal"/>
+
+        <property name="status" column="status">
+            <type name="org.hibernate.type.EnumType">
+                <param name="enumClass">chess.core.enums.WithdrawStatus</param>
+                <param name="type">4</param>
+            </type>
+        </property>
+
+        <property name="finishTime" column="finish_time" type="java.util.Date"/>
+
+    </class>
+
+</hibernate-mapping>

@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping default-access="field">
+    <class name="chess.domain.model.feedback.FeedBack" table="t_feed_back">
+        <id name="id" type="java.lang.String" column="id" unsaved-value="null" length="32">
+            <generator class="uuid"/>
+        </id>
+
+        <version name="version" type="java.lang.Integer" column="version"/>
+
+        <property name="email" column="email" type="java.lang.String"/>
+
+        <property name="phone" column="phone" type="java.lang.String"/>
+
+        <property name="qq" column="qq" type="java.lang.String"/>
+
+        <property name="content" column="content" type="java.lang.String"/>
+
+        <property name="createDate" column="create_date" type="java.util.Date"/>
+
+        <property name="status" column="status">
+            <type name="org.hibernate.type.EnumType">
+                <param name="enumClass">chess.core.enums.HandleStatus</param>
+                <param name="type">4</param>
+            </type>
+        </property>
+    </class>
+
+</hibernate-mapping>

@@ -1,0 +1,9 @@
+.loginVerification input {
+    width: 60%;
+}
+
+.loginVerification img {
+    width: 40%;
+    height: 35px;
+    float: left;
+}

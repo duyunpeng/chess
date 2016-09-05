@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<apifile>
+    <tables>
+
+    </tables>
+    <apis>
+        <api>
+            <id>266013ab-4522-4b6d-9fdd-ec8d370be5da</id>
+            <name>查询游戏倍数</name>
+            <address>/app/api/game_multiple/list</address>
+            <shuoming>gameType(游戏)</shuoming>
+            <zhuyi>参数不能为空,gameType(LANDLORDS->斗地主，THREE_CARD->扎金花，BULLFIGHT->斗牛)</zhuyi>
+            <fanhuixinxi>
+                {"code":"SUCCESS","message":"处理成功","debugTime":7,"data":[{"id":"ff8081815606a3e9015606a46f2e0002","version":0,"createDate":null,"gameType":"LANDLORDS","multiple":20}]}
+            </fanhuixinxi>
+        </api>
+        <api>
+            <id>266013fb-4522-4b5d-9fdd-ec8d770be5da</id>
+            <name>发送注册验证码</name>
+            <address>/app/api/sms/sms_register</address>
+            <shuoming>phone(账号)</shuoming>
+            <zhuyi>参数不能为空</zhuyi>
+            <fanhuixinxi>{"code":"SUCCESS","data":"null","debugTime":91,"message":"处理成功"}</fanhuixinxi>
+        </api>
+        <api>
+            <id>5f5edee9-832a-4b4d-96aa-a6c2731aa088</id>
+            <name>注册</name>
+            <address>/app/api/register</address>
+            <shuoming>userName(账号,手机号码),password(密码),verificationCode(验证码)</shuoming>
+            <zhuyi>参数不能为空</zhuyi>
+            <fanhuixinxi>{"code":"SUCCESS","data":"null","debugTime":91,"message":"处理成功"}</fanhuixinxi>
+        </api>
+        <api>
+            <id>c9c0e02e-cfe2-4012-ae21-49d232a4f057</id>
+            <name>登录</name>
+            <address>/app/api/login</address>
+            <shuoming>userName(用户名),password(密码)</shuoming>
+            <zhuyi>参数不能为空</zhuyi>
+            <fanhuixinxi>{"code":"SUCCESS","data":"null","debugTime":91,"message":"处理成功"}</fanhuixinxi>
+        </api>
+        <api>
+            <id>722da2cf-7bb1-4d9e-bf84-b62709dc6186</id>
+            <name>退出登录</name>
+            <address>/app/api/logout</address>
+            <shuoming>无</shuoming>
+            <zhuyi>无</zhuyi>
+            <fanhuixinxi>{"code":"SUCCESS","data":"null","debugTime":91,"message":"处理成功"}</fanhuixinxi>
+        </api>
+        <api>
+            <id>2660130b-4522-4b6d-9fad-ec8d370be5da</id>
+            <name>支付预下单</name>
+            <address>/app/api/recharge/pay</address>
+            <shuoming>money(金额)</shuoming>
+            <zhuyi>参数不能为空</zhuyi>
+            <fanhuixinxi>
+                {"code":"SUCCESS","message":"处理成功","debugTime":7,"data":[]}
+            </fanhuixinxi>
+        </api>
+    </apis>
+</apifile>

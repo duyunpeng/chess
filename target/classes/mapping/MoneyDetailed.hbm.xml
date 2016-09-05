@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping default-access="field">
+    <class name="chess.domain.model.moneydetailed.MoneyDetailed" table="t_money_detailed" lazy="true">
+        <id name="id" type="java.lang.String" column="id" unsaved-value="null" length="32">
+            <generator class="uuid"/>
+        </id>
+
+        <version column="version" name="version" type="java.lang.Integer"/>
+
+        <property name="createDate" column="create_date" type="java.util.Date"/>
+
+        <many-to-one name="user" column="user_id" class="chess.domain.model.user.User"/>
+
+        <property name="money" column="money" type="java.math.BigDecimal"/>
+
+        <property name="flowType" column="flow_type">
+            <type name="org.hibernate.type.EnumType">
+                <param name="enumClass">chess.core.enums.FlowType</param>
+                <param name="type">4</param>
+            </type>
+        </property>
+
+        <property name="description" column="description" type="java.lang.String"/>
+
+        <property name="oldMoney" column="old_money" type="java.math.BigDecimal"/>
+
+        <property name="newMoney" column="new_money" type="java.math.BigDecimal"/>
+
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,26 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    border: 0;
+}
+
+.back-img {
+    background: url(../../images/yq-background1.png) no-repeat;
+    width: 100%;
+    height: 100%;
+    background-size: 100%;
+    padding-top: 65%;
+    padding-bottom: 45%;
+}
+
+.sing-cont1, .sing-cont2 {
+    width: 40%;
+    margin: 0 auto;
+}
+
+.sing-cont2 {
+    margin-top: 5%;
+}

@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping default-access="field">
+    <class name="chess.domain.model.recharge.Recharge" table="t_recharge" lazy="true">
+        <id name="id" type="java.lang.String" column="id" unsaved-value="null" length="32">
+            <generator class="uuid"/>
+        </id>
+
+        <version column="version" name="version" type="java.lang.Integer"/>
+
+        <property name="createDate" column="create_date" type="java.util.Date"/>
+
+        <many-to-one name="user" column="user_id" class="chess.domain.model.user.User"/>
+
+        <property name="money" column="money" type="java.math.BigDecimal"/>
+
+        <property name="payType" column="pay_type" type="java.lang.String"/>
+
+        <property name="isSuccess" column="is_success">
+            <type name="org.hibernate.type.EnumType">
+                <param name="enumClass">chess.core.enums.YesOrNoStatus</param>
+                <param name="type">4</param>
+            </type>
+        </property>
+    </class>
+</hibernate-mapping>

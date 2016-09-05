@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping default-access="field">
+    <class name="chess.domain.model.account.Account" table="t_account" lazy="true">
+        <id name="id" type="java.lang.String" column="id" unsaved-value="null" length="32">
+            <generator class="uuid"/>
+        </id>
+
+        <version column="version" name="version" type="java.lang.Integer"/>
+
+        <property name="createDate" column="create_date" type="java.util.Date"/>
+
+        <property name="userName" column="user_name" type="java.lang.String"/>
+
+        <property name="password" column="password" type="java.lang.String"/>
+
+        <property name="salt" column="salt" type="java.lang.String"/>
+
+        <property name="lastLoginIP" column="last_login_ip" type="java.lang.String"/>
+
+        <property name="lastLoginDate" column="last_login_date" type="java.util.Date"/>
+
+        <property name="lastLoginPlatform" column="last_login_platform" type="java.lang.String"/>
+
+        <bag name="roles" lazy="extra" table="t_account_role" cascade="save-update">
+            <key column="account_id"/>
+            <many-to-many class="chess.domain.model.role.Role" column="role_id"/>
+        </bag>
+
+
+        <many-to-one name="headPic" column="head_pic_id" class="chess.domain.model.picture.Picture"/>
+
+        <property name="status" column="status">
+            <type name="org.hibernate.type.EnumType">
+                <param name="enumClass">chess.core.enums.EnableStatus</param>
+                <param name="type">4</param>
+            </type>
+        </property>
+
+        <property name="email" column="email" type="java.lang.String"/>
+
+        <joined-subclass name="chess.domain.model.user.User" table="t_user">
+            <key column="account_id"/>
+            <property name="name" column="name" type="java.lang.String"/>
+            <many-to-one name="area" column="area_id" class="chess.domain.model.area.Area"/>
+            <property name="money" column="money" type="java.math.BigDecimal"/>
+            <property name="authStatus" column="auth_status">
+                <type name="org.hibernate.type.EnumType">
+                    <param name="enumClass">chess.core.enums.AuthStatus</param>
+                    <param name="type">4</param>
+                </type>
+            </property>
+            <property name="payPassword" column="pay_password" type="java.lang.String"/>
+            <property name="sex" column="sex">
+                <type name="org.hibernate.type.EnumType">
+                    <param name="enumClass">chess.core.enums.Sex</param>
+                    <param name="type">4</param>
+                </type>
+            </property>
+            <component name="landlords">
+                <property name="loseCount" column="landlords_lose_count" type="java.lang.Integer"/>
+                <property name="winCount" column="landlords_win_count" type="java.lang.Integer"/>
+            </component>
+            <component name="threeCard">
+                <property name="loseCount" column="threecard_lose_count" type="java.lang.Integer"/>
+                <property name="winCount" column="threecard_win_count" type="java.lang.Integer"/>
+            </component>
+        </joined-subclass>
+    </class>
+</hibernate-mapping>

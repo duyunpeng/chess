@@ -1,0 +1,243 @@
+﻿     * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body, html {
+            width: 100%;
+        }
+
+        a {
+            text-decoration: none;
+            color: #666666;
+        }
+
+        body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, textarea, p, blockquote, th, td {
+            padding: 0;
+            margin: 0;
+        }
+
+        table {
+            border-collapse: collapse;
+            border-spacing: 0;
+        }
+
+        fieldset, img {
+            border: 0;
+        }
+
+        caption, th {
+            text-align: left;
+        }
+
+        a {
+            text-decoration: none;
+            color: #717171;
+        }
+
+        body {
+            font-family: "微软雅黑", "宋体", Arial;
+            font-size: 12px;
+        }
+
+        .clear {
+            height: 1px;
+            line-height: 1px;
+            font-size: 1px;
+            clear: both;
+            margin-top: -1px;
+        }
+
+        i {
+            font-style: normal;
+        }
+
+        .fl {
+            float: left;
+        }
+
+        .fr {
+            float: right;
+        }
+
+        .big_div {
+            width: 1200px;
+            margin: 0 auto;
+            margin-top: 30px;
+        }
+
+        .left_div {
+            width: 578px;
+            border-right: 3px solid #f0f0f0;
+            padding: 0 20px 0 0;
+        }
+
+        .l_div_i {
+            width: 578px;
+            border-bottom: 3px solid #b5b5b5;
+            margin-bottom: 20px;
+        }
+
+        .right_div {
+            width: 578px;
+            padding: 0 0 0 20px;
+        }
+
+        .l_title {
+            width: 100%;
+            margin: 0 auto;
+            text-align: center;
+            height: 50px;
+            border-bottom: 4px solid #980000;
+            line-height: 50px;
+            font-size: 26px;
+            margin-bottom: 20px;
+        }
+
+        .mingcheng {
+            width: 100%;
+        }
+
+            .mingcheng .mc {
+                width: 100%;
+                margin: 5px 0;
+                display: block;
+                overflow: hidden;
+            }
+
+                .mingcheng .mc span {
+                    width: 100%;
+                    font-size: 12px;
+                    font-weight: bold;
+                    padding: 0 5px 0 0;
+                    display: block;
+                    line-height: 20px;
+                }
+
+     .mingcheng .mc p span {
+         font-size: 12px;
+         font-weight: bold;
+         padding: 0 5px 0 0;
+         display: block;
+         line-height: 20px;
+         /*overflow: auto;*/
+         /*word-break:normal;*/
+         /*white-space:pre-wrap;*/
+         word-wrap : break-word ;
+     }
+
+     .mingcheng .mc p textarea {
+         width: 98%;
+         font-size: 12px;
+         height: 120px;
+         display: none;
+     }
+
+     .mingcheng .mc p input{
+         width: 98%;
+         font-size: 12px;
+     }
+     .mingcheng .mc a input{
+         width: 98%;
+         font-size: 12px;
+     }
+
+                .mingcheng .mc p {
+                    color: #666;
+                    width: 100%;
+                    float: left;
+                    line-height: 20px;
+                }
+
+        .table1 {
+            width: 578px;
+            border: 1px solid #ccc;
+            margin: 20px 0;
+        }
+
+            .table1 tr td, .table2 tr td {
+                border: 1px solid #e4e4e4;
+                line-height: 20px;
+                padding: 4px 4px;
+                color: #666;
+            }
+
+            .table1 .tit, .table2 .tit {
+                text-align: center;
+                font-size: 14px;
+                height: 30px;
+                line-height: 30px;
+            }
+
+                .table1 .tit td, .table2 .tit td {
+                    color: #333;
+                }
+
+                .table1 .tit .td_1, .table1 .tit .td_2 {
+                    width: 100px;
+                }
+
+        .sjk_name {
+            line-height: 24px;
+            margin: 20px 0 0 0;
+            padding: 0 0 10px 0;
+            font-size: 20px;
+            text-align: center;
+            font-weight: bold;
+            border:0;
+            border-bottom: 1px dashed #ccc;
+            color: #980000;
+        }
+
+        .table2 {
+            width: 578px;
+            border: 1px solid #ccc;
+            margin: 10px 0 20px 0;
+        }
+
+        .two1 {
+            width: 90px;
+        }
+
+        .biaoti {
+            width: 100%;
+            margin-left: 20px;
+        }
+
+        .big_title {
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .ul_tt {
+            margin: 0 0 0 20px;
+            line-height: 24px;
+        }
+
+            .ul_tt li a {
+                color: #333;
+                font-size: 16px;
+                font-weight: bold;
+                line-height: 24px;
+            }
+
+        .go_top {
+            width: 35px;
+            height: 35px;
+            background: #666;
+            color: #fff;
+            font-size: 30px;
+            text-align: center;
+            line-height: 40px;
+            border-radius: 20px;
+            position: fixed;
+            left: 49%;
+            bottom: 4px;
+        }
+
+            .go_top a {
+                color: #fff;
+            }
+.rowdkdh {border:none;}
+.table2 tr input{width:100%; height:100%;border:none;
+}
